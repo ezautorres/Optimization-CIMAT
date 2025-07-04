@@ -55,48 +55,63 @@ This project was developed in Python 3.11 using:
 The following section presents a concise overview of each task, highlighting its primary objective:
 
 ### Assignment 1 – *Golden Section Search and Gradient-Based Optimization* 
-  Implementation of the Golden Section Search method to find minima of univariate functions. The task also includes computing directional derivatives and applying the method to optimize along descent directions for the Griewangk function. Finally, a gradient is inferred from directional derivatives using linear systems.
+Implementation of the Golden Section Search method to find minima of univariate functions. The task also includes computing directional derivatives and applying the method to optimize along descent directions for the Griewangk function. Finally, a gradient is inferred from directional derivatives using linear systems.
 
-  <div align="center">
-    <img src="https://github.com/ezautorres/Scientific-Computing-CIMAT/raw/main/assignment1/results/ex6_as1.png" alt="Execution time comparison – Cholesky vs LUP" width="500"/>
-  </div>
+<div align="center">
+  <img src="https://github.com/ezautorres/Optimization-CIMAT/blob/main/assignment1/output.png" alt="Golden Section Search on test functions" width="500"/>
+</div>
 
-### Assignment 2 – QR Decomposition and Least Squares  
-  Implementation of the modified Gram-Schmidt algorithm and its application to solve linear regression problems via QR decomposition. Includes polynomial fitting with varying degrees and sample sizes, and a performance comparison between the custom implementation and SciPy's QR routine.
 
-  <div align="center">
-    <img src="https://github.com/ezautorres/Scientific-Computing-CIMAT/raw/main/assignment2/results/gram_schmidt.png" alt="Polynomial fitting using QR decomposition" width="500"/>
-  </div>
+### Assignment 2 – *Exact Line Search and Gradient Descent on Quadratics*
+Exploration of gradient descent with exact line search on quadratic functions. First, the number of iterations required for convergence is estimated using spectral properties of the Hessian. Then, the performance of the gradient descent algorithm is evaluated across datasets of increasing dimensionality. Finally, the method is tested on nonlinear functions (Himmelblau, Beale, and Rosenbrock) using golden section search to determine optimal step sizes, including an analysis of stopping criteria and trajectory visualization.
 
-### Assignment 3 – Numerical Stability  
-  Analysis of numerical stability in Cholesky decomposition under perturbations. The task explores how matrix conditioning affects the results of QR-based least squares solutions. Includes timing comparisons and estimator sensitivity under both well-conditioned and ill-conditioned scenarios.
+<div align="center">
+  <img src="https://github.com/ezautorres/Optimization-CIMAT/blob/main/assignment2/output.png" alt="Gradient descent trajectories on test functions" width="500"/>
+</div>
 
-### Assignment 4 – Eigenvalue Computation  
-  Application of Gershgorin’s theorem to estimate eigenvalue locations and implementation of the QR iteration algorithm to numerically compute eigenvalues. Includes comparisons with SciPy’s `eig` function across perturbation levels, confirming the accuracy and limitations of the custom QR method.
+### Assignment 3 – *Newton’s Method for Nonlinear Optimization*  
+Implementation of Newton’s method for unconstrained optimization. The assignment includes symbolic and numerical computation of gradients and Hessians using sympy, application of Newton’s method on various benchmark functions (Beale, Himmelblau, Rosenbrock), and a comparative analysis of convergence against gradient descent. The behavior of the method is visualized through contour plots of trajectories and stopping conditions are critically assessed.
 
-### Assignment 5 – Stochastic Simulation  
-  Exploration of methods for sampling from distributions, including inverse transform sampling, linear congruential generators, and SciPy’s discrete random utilities. The assignment culminates with a full implementation of Adaptive Rejection Sampling (ARS), applied to simulate from Gamma(2,1), Normal, and Beta distributions with high accuracy.
+<div align="center">
+  <img src="https://github.com/ezautorres/Optimization-CIMAT/blob/main/assignment3/output.png" alt="Newton's method trajectory on benchmark function" width="500"/>
+</div>
 
-### Assignment 6 – MCMC: Metropolis-Hastings  
-  Simulation of Bernoulli data and posterior inference for the parameter 𝞺 using Metropolis-Hastings. Two proposal distributions were implemented: a Beta prior-informed proposal and a truncated Normal centered at the current state. The task includes analysis of irreducibility and ergodicity, along with convergence behavior as sample size increases.
+### Assignment 4 – *Conjugate Gradient Method*  
+Solving large symmetric positive-definite systems using the Conjugate Gradient (CG) method. Theoretical properties are verified numerically, including orthogonality of residuals and convergence in at most n steps. A performance comparison is conducted between CG and standard solvers (np.linalg.solve) on randomly generated matrices, and the effect of perturbations in the system is explored to understand stability and convergence degradation.
 
-### Assignment 7 – Metropolis-Hastings in Multivariate Settings  
-  Implementation of Metropolis-Hastings for bivariate and Gamma distributions, including random walk proposals and convergence diagnostics under different sample sizes and proposal variances.
+<div align="center">
+  <img src="https://github.com/ezautorres/Optimization-CIMAT/blob/main/assignment4/output.png" alt="Conjugate Gradient convergence behavior" width="500"/>
+</div>
 
-### Assignment 8 – MCMC with Hybrid Kernels and Gibbs Sampling  
-  Simulation from complex posteriors using hybrid Metropolis-Hastings and Gibbs samplers. Includes examples with bivariate normals, Weibull likelihoods, and hierarchical Poisson-Gamma models for nuclear pump failure data.
+### Assignment 5 – *Numerical Optimization in Practice*  
+Explores nonlinear multivariate optimization using gradient-based and Newton methods. Begins by locating and classifying critical points of a multivariable function via symbolic differentiation. Then, both gradient descent with exact line search and Newton’s method are applied to functions with indefinite Hessians, adjusting step size strategies as needed. The final part demonstrates convexity properties of function compositions and identifies intervals containing minimizers.
 
-### Assignment 9 – MCMC with Hybrid Kernels and Gibbs Sampling  
-  Simulation from complex posteriors using hybrid Metropolis-Hastings and Gibbs samplers. Includes examples with bivariate normals, Weibull likelihoods, and hierarchical Poisson-Gamma models for nuclear pump failure data.
+<div align="center">
+  <img src="https://github.com/ezautorres/Optimization-CIMAT/blob/main/assignment5/output.png" alt="Function landscape and optimization steps" width="500"/>
+</div>
+
+### Assignment 6 – *Trust Region and BFGS Methods*  
+Explores second-order optimization strategies, including Newton’s method with trust regions and the BFGS quasi-Newton algorithm. Both methods are applied to Himmelblau and Rosenbrock functions, with performance compared through trajectory visualization and function value decay. Implementation includes the dogleg method for step selection inside trust regions, and an update strategy for the inverse Hessian approximation in BFGS.
+
+### Assignment 7 – *Constrained Optimization and KKT Conditions*  
+Explores constrained optimization using Karush-Kuhn-Tucker (KKT) conditions. Begins with classification of constraint types and verification of constraint qualifications. Implements an active set strategy and barrier methods to solve problems with both equality and inequality constraints. Solutions are compared to SciPy’s minimize under trust-constr and SLSQP methods, analyzing the path toward the constrained optimum.
+
+### Assignment 8 – *Penalty Methods for Constrained Optimization*  
+Explores the use of quadratic penalty and logarithmic barrier functions for solving constrained optimization problems. Both equality and inequality constraints are handled through external penalization, with convergence monitored as the penalty parameter increases. Includes a comparison between penalty trajectories and solutions from standard constrained solvers, emphasizing the trade-off between feasibility and optimality.
+
+### Assignment 9 – *Logistic Regression and Gauss-Newton for Nonlinear Least Squares*  
+Explores the implementation of logistic regression using gradient descent with backtracking line search, applied to a real-world binary classification problem on heart disease data. It involves deriving the gradient of the regularized logistic loss and coding the classifier from scratch, including evaluation using accuracy and confusion matrix. The second part focuses on nonlinear regression using the Gauss-Newton method to fit a sigmoidal model to noisy data, highlighting parameter estimation and convergence behavior. Both sections emphasize numerical optimization strategies and practical modeling considerations.
+
 ---
 
-### Final Project – Bayesian Inference for Weibull Parameters  
-  Full Bayesian treatment of a Weibull likelihood using MCMC. Implements both standard Metropolis-Hastings and adaptive proposals for posterior sampling of 𝛼 and λ, with convergence diagnostics and posterior summaries for simulated datasets.
+### Test - *Constrained Optimization and Nonlinear Systems*
+Implements advanced optimization methods for constrained problems and nonlinear equation systems. Part I solves a constrained minimization using quadratic penalty and modified BFGS with backtracking. Part II applies Newton’s method to solve a nonlinear system, examining convergence under random initialization.
 
-  <div align="center">
-    <img src="https://github.com/ezautorres/Scientific-Computing-CIMAT/raw/main/final_project/results/trayectory_ex2.png" alt="Trayectory of alpha and lambda for Weibull model" width="500"/>
-  </div>
-  
+---
+
+### Final Project – *Hybrid Conjugate Gradient Method with Restart*  
+Explores a family of hybrid conjugate gradient methods with restart procedures designed for large-scale unconstrained optimization and image restoration. Implements the IJYHL algorithm from recent literature, which combines two hybrid strategies into a single-parameter conjugate direction formula. The method ensures sufficient descent without line search dependency and guarantees global convergence under weak Wolfe conditions. The algorithm is tested on standard benchmark functions and compared against classical CG methods like HS, FR, PRP, and DY, highlighting its effectiveness and numerical robustness.
+
 ---
 
 ## Learning Outcomes
