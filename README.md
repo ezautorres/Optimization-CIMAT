@@ -1,27 +1,37 @@
 # Optimization – CIMAT CIMAT (Spring 2024)
 
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange)
+![Gradient Descent](https://img.shields.io/badge/Gradient%20Descent-✓-informational)
+![Newton's Method](https://img.shields.io/badge/Newton's%20Method-✓-important)
+![Trust Region](https://img.shields.io/badge/Trust%20Region-✓-darkred)
+![BFGS](https://img.shields.io/badge/BFGS-✓-teal)
+
 **Author:** Ezau Faridh Torres Torres  
 **Advisor:** Dr. Joaquín Peña Acevedo  
 **Course:** Optimization  
 **Institution:** CIMAT – Centro de Investigación en Matemáticas  
 **Term:** Spring 2024 
 
-*description*
+Explores **numerical and nonlinear optimization methods** from first principles. Each assignment blends theoretical formulation with practical implementation, covering unconstrained and constrained optimization, stochastic methods, and real-world applications through gradient-based solvers, trust-region approaches, and MCMC techniques. The course culminates in a final project evaluating a hybrid conjugate gradient method for large-scale optimization.
 
 ## 📄 Table of Contents
 
 - [Repository Structure](#repository-structure)
 - [Technical Stack](#technical-stack)
 - [Overview of Assignments](#overview-of-assignments)
-  - [Assignment 1 – LU and Cholesky Decomposition](#assignment-1--lu-and-cholesky-decomposition)
-  - [Assignment 2 – QR Decomposition and Least Squares](#assignment-2--qr-decomposition-and-least-squares)
-  - [Assignment 3 – Numerical Stability](#assignment-3--numerical-stability)
-  - [Assignment 4 – Eigenvalue Computation](#assignment-4--eigenvalue-computation)
-  - [Assignment 5 – Stochastic Simulation](#assignment-5--stochastic-simulation)
-  - [Assignment 6 – MCMC: Metropolis-Hastings](#assignment-6--mcmc-metropolis-hastings)
-  - [Assignment 7 – Metropolis-Hastings in Multivariate Settings](#assignment-7--metropolis-hastings-in-multivariate-settings)
-  - [Assignment 8 – MCMC with Hybrid Kernels and Gibbs Sampling](#assignment-8--mcmc-with-hybrid-kernels-and-gibbs-sampling)
-  - [Final Project – Bayesian Inference for Weibull Parameters](#final-project--bayesian-inference-for-weibull-parameters)
+  - [Assignment 1 – Golden Section Search and Gradient-Based Optimization](#assignment-1--golden-section-search-and-gradient-based-optimization)
+  - [Assignment 2 – Exact Line Search and Gradient Descent on Quadratics](#assignment-2--exact-line-search-and-gradient-descent-on-quadratics)
+  - [Assignment 3 – Newton’s Method for Nonlinear Optimization](#assignment-3--newtons-method-for-nonlinear-optimization)
+  - [Assignment 4 – Conjugate Gradient Method](#assignment-4--conjugate-gradient-method)
+  - [Assignment 5 – Numerical Optimization in Practice](#assignment-5--numerical-optimization-in-practice)
+  - [Assignment 6 – Trust Region and BFGS Methods](#assignment-6--trust-region-and-bfgs-methods)
+  - [Assignment 7 – Constrained Optimization and KKT Conditions](#assignment-7--constrained-optimization-and-kkt-conditions)
+  - [Assignment 8 – Penalty Methods for Constrained Optimization](#assignment-8--penalty-methods-for-constrained-optimization)
+  - [Assignment 9 – Logistic Regression and Gauss-Newton for Nonlinear Least Squares](#assignment-9--logistic-regression-and-gauss-newton-for-nonlinear-least-squares)
+  - [Test – Constrained Optimization and Nonlinear Systems](#test---constrained-optimization-and-nonlinear-systems)
+  - [Final Project – Hybrid Conjugate Gradient Method with Restart](#final-project--hybrid-conjugate-gradient-method-with-restart)
+- [Learning Outcomes](#-learning-outcomes)
 - [Contact](#-contact)
 
 ---
@@ -32,19 +42,14 @@ Each assignment comprises the following elements:
 
 - Python scripts with modular implementations of the required models and methods.
 - A `report.pdf` that explains the methodology and findings.
-- A `results/` directory with visual representations of the results.  
 
 ---
 
 ## Technical Stack
 
-This project was developed in Python 3.11 using:
-
-- **Core libraries:** `numpy`, `scipy`, `matplotlib`, `pandas`
-- **Symbolic computation:** `sympy`
-- **Statistical modeling & distributions:** `scipy.stats`
-- **Plotting & visualization:** `seaborn`, `matplotlib`
-- **Jupyter Notebooks** (for prototyping)
+- Python 3.11
+- `numpy`, `scipy`, `matplotlib`, `pandas`, `sympy`, `seaborn`
+- Jupyter Notebooks (for prototyping)
 
 > Note: Each assignment may include additional libraries specified in the corresponding script headers.
 
@@ -109,7 +114,7 @@ Implements advanced optimization methods for constrained problems and nonlinear 
 
 ---
 
-### Final Project – *Hybrid Conjugate Gradient Method with Restart*  
+### Final Project – *IJYHL Hybrid Conjugate Gradient with Restart*  
 Explores a family of hybrid conjugate gradient methods with restart procedures designed for large-scale unconstrained optimization and image restoration. Implements the IJYHL algorithm from recent literature, which combines two hybrid strategies into a single-parameter conjugate direction formula. The method ensures sufficient descent without line search dependency and guarantees global convergence under weak Wolfe conditions. The algorithm is tested on standard benchmark functions and compared against classical CG methods like HS, FR, PRP, and DY, highlighting its effectiveness and numerical robustness.
 
 ---
@@ -118,13 +123,19 @@ Explores a family of hybrid conjugate gradient methods with restart procedures d
 
 Throughout the course, I gained practical experience in:
 
-- Implementing numerical linear algebra algorithms from scratch
-- Performing polynomial and spline interpolation
-- Solving ordinary differential equations using numerical schemes
-- Designing and evaluating stochastic simulation pipelines (e.g., ARS, MCMC)
-- Analyzing convergence and stability in numerical methods
-- Applying Bayesian inference via MCMC techniques to real data
-- Writing clear scientific reports with integrated visualizations
+- Implemented numerical optimization algorithms from scratch
+- Analyzed convergence behavior of gradient-based and second-order methods
+- Solved constrained problems using KKT, barrier, and penalty techniques
+- Explored stability and numerical properties of optimization solvers
+- Applied nonlinear optimization to real datasets and benchmark functions
+- Developed technical reports with integrated visualizations and diagnostics
+
+---
+
+## References
+
+- Xiaomin Y., Xianzhen J., and Zefeng H. A family of hybrid conjugate gradient method with restart procedure for unconstrained optimizations and image restorations. 2023.
+https://www.sciencedirect.com/science/article/abs/pii/S0305054823002058
 
 ---
 
